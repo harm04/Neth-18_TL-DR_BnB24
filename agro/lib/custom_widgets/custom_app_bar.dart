@@ -4,7 +4,8 @@ class CustomAppBar extends PreferredSize {
   final double? height;
   final Widget child;
 
-  CustomAppBar({@required this.height, required this.child}) : super(preferredSize: Size.zero, child: child);
+  CustomAppBar({@required this.height, required this.child})
+      : super(preferredSize: Size.zero, child: child);
 
   @override
   Size get preferredSize => Size.fromHeight(height!);
@@ -12,7 +13,7 @@ class CustomAppBar extends PreferredSize {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color:Colors.blueGrey,
+      
         height: preferredSize.height,
         alignment: Alignment.bottomCenter,
         child: child);

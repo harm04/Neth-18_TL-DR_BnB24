@@ -1,6 +1,6 @@
+import 'package:agri_chain/screens/Product_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:agri_chain/screens/Urun_Page.dart';
 import 'package:agri_chain/custom_widgets/button_plain.dart';
 import 'package:agri_chain/home.dart';
 import 'package:agri_chain/linking/contract_linking.dart';

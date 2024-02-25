@@ -31,8 +31,8 @@ class _MyHomePageState extends State<MyHomePage> {
       return SplashPage();
     } else {
       return Scaffold(
-        backgroundColor: Colors.blueGrey,
         appBar: CustomAppBar(
+          
           height: 200,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(
                             fontSize: 44,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                            color: Colors.black),
                       ),
                     ),
                     Spacer(),
@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: EdgeInsets.only(right: 50, bottom: 20),
                       child: IconButton(
                         tooltip: "Developer Options",
-                        icon: Icon(Icons.adf_scanner_rounded, size: 50),
-                        color: white,
+                        icon: Icon(Icons.login, size: 50),
+                        color: black,
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -112,17 +112,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ? Center(
                 child: CircularProgressIndicator(color: black),
               )
-            : Container(
-                child: ListView.builder(
-                  itemCount: 1,
-                  // padding: EdgeInsets.only(left: 24, right: 24, bottom: 24),
-                  itemBuilder: (context, index) {
-                    // final Task=searchedObjects[index];
-                    print(searchedObjects[index].id);
-                    return TaskCard(urun: searchedObjects[index]);
-                  },
+            : Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Container(
+                  child: ListView.builder(
+                    itemCount: searchedObjects.length,
+                    // padding: EdgeInsets.only(left: 24, right: 24, bottom: 24),
+                    itemBuilder: (context, index) {
+                      // final Task=searchedObjects[index];
+                      print(searchedObjects[index].id);
+                      return TaskCard(urun: searchedObjects[index]);
+                    },
+                  ),
                 ),
-              ),
+            ),
       );
     }
   }
